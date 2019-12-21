@@ -216,19 +216,24 @@ public class DynamicListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             firstListSize = firstList.size();
 
         if (secondListSize > 0 && firstListSize > 0) {
-            if (position == 0) return FIRST_LIST_HEADER_VIEW;
+            if (position == 0)
+                return FIRST_LIST_HEADER_VIEW;
             else if (position == firstListSize + 1)
                 return SECOND_LIST_HEADER_VIEW;
             else if (position == secondListSize + 1 + firstListSize + 1)
                 return FOOTER_VIEW;
             else if (position > firstListSize + 1)
                 return SECOND_LIST_ITEM_VIEW;
-            else return FIRST_LIST_ITEM_VIEW;
+            else
+                return FIRST_LIST_ITEM_VIEW;
 
         } else if (secondListSize > 0 && firstListSize == 0) {
-            if (position == 0) return SECOND_LIST_HEADER_VIEW;
-            else if (position == secondListSize + 1) return FOOTER_VIEW;
-            else return SECOND_LIST_ITEM_VIEW;
+            if (position == 0)
+                return SECOND_LIST_HEADER_VIEW;
+            else if (position == secondListSize + 1)
+                return FOOTER_VIEW;
+            else
+                return SECOND_LIST_ITEM_VIEW;
 
         } else if (secondListSize == 0 && firstListSize > 0) {
             if (position == 0) return FIRST_LIST_HEADER_VIEW;
